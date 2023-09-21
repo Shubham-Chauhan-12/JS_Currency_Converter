@@ -133,11 +133,11 @@ const countries = [
     }
 ]
 
-const fromAmountElement = document.querySelector('.amount');
-const convertedAmountElement = document.querySelector('.convertedAmount');
-const fromcurrencyElement = document.querySelector('.fromcurrency');
-const tocurrencyElement = document.querySelector('.tocurrency');
-const ResultElement = document.querySelector('.result');
+const fromAmountElement = document.querySelector('#amount');
+const convertedAmountElement = document.querySelector('#convertedAmount');
+const fromcurrencyElement = document.querySelector('#fromcurrency');
+const tocurrencyElement = document.querySelector('#tocurrency');
+const ResultElement = document.querySelector('#result');
 
 
 
@@ -147,8 +147,8 @@ countries.forEach(country => {
     option1.value = country.code;
     option2.value = country.code;
 
-    option1.textContent = (country.code + " " + country.name);
-    option2.textContent = (country.code + " " + country.name);
+    option1.textContent = (country.code + "  (" + country.name + ")");
+    option2.textContent = (country.code + "  (" + country.name + ")");
 
     fromcurrencyElement.appendChild(option1);
     tocurrencyElement.appendChild(option2);
@@ -161,9 +161,9 @@ countries.forEach(country => {
 })
 
 
-// Fetch data
+// Fetching Data and Conversion
 
-const getExchangeRate = async()=>{
+const getExchangeRate = async () => {
     const amount = parseFloat(fromAmountElement.value);
     const fromcurrency = fromcurrencyElement.value;
     const tocurrency = tocurrencyElement.value;
@@ -173,15 +173,20 @@ const getExchangeRate = async()=>{
 
     const data = await response.json();
 
+    
+
     const conversionRate = data.conversion_rates[tocurrency];
 
     const convertedAmount = (amount * conversionRate);
 
     convertedAmountElement.value = convertedAmount;
 
-    document.getElementById("main").innerHTML = convertedAmount;
 
+    document.getElementById("main").innerHTML = "** 1 " + fromcurrency + " = " + tocurrency + " " + conversionRate;
 
-    // console.log(data);
 
 }
+
+
+
+
