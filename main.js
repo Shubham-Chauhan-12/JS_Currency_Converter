@@ -159,3 +159,29 @@ countries.forEach(country => {
     fromAmountElement.value = 1
 
 })
+
+
+// Fetch data
+
+const getExchangeRate = async()=>{
+    const amount = parseFloat(fromAmountElement.value);
+    const fromcurrency = fromcurrencyElement.value;
+    const tocurrency = tocurrencyElement.value;
+
+
+    const response = await fetch('https://v6.exchangerate-api.com/v6/d90cc8503f76c5272d2c8985/latest/'.concat(fromcurrency));
+
+    const data = await response.json();
+
+    const conversionRate = data.conversion_rates[tocurrency];
+
+    const convertedAmount = (amount * conversionRate);
+
+    convertedAmountElement.value = convertedAmount;
+
+    document.getElementById("main").innerHTML = convertedAmount;
+
+
+    // console.log(data);
+
+}
