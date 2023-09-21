@@ -17,6 +17,7 @@
 
 <body>
     <!-- header -->
+
     <nav class="navbar fixed-top bg-body-tertiary" data-bs-theme="dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
@@ -30,24 +31,77 @@
 
     <!-- main -->
 
-    <div class="container">
-        <input type="number" value="1" min="1" class="amount">
-        <select class="fromcurrency"></select>
+    <main>
+        <div class="container">
+            <br>
+            <hr>
 
-        <input type="number" class="convertedAmount">
-        <select class="tocurrency"></select>
+            <h1>Currency Converter</h1>
+            <hr>
+            <br>
 
-        result = <h3 id="main"></h3>
 
-        <button onclick="getExchangeRate()">Check</button>
-    </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text">Amount</span>
+                <input type="number" class="form-control" placeholder="Enter the Amount for Conversion" min="1"
+                    id="amount">
+            </div>
+            <div class="input-group mb-3">
+
+                <span class="input-group-text">FROM</span>
+                <select id="fromcurrency"></select>
+
+
+                <span id="symbol">
+                    &rarr;
+                </span>
+
+
+                <span class="input-group-text">TO</span>
+                <select id="tocurrency"></select>
+
+
+            </div>
+
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">Converted Amount</span>
+                <input type="number" class="form-control" placeholder="Converted Amount reflects here "
+                    id="convertedAmount" disabled>
+
+            </div>
+
+
+            <div class="input-group mb-3">
+
+                <h5 id="main"></h5>
+
+            </div>
+            <div>
+                <button type="button" onclick="getExchangeRate()" class="btn btn-outline-dark" >CONVERT</button>
+            </div>
+
+            <br>
+            <br>
+
+                
+
+
+        </div>
+    </main>
+
+
 
     <!-- footer -->
+
     <nav class="navbar fixed-bottom bg-body-tertiary">
         <div class="container-fluid" style="justify-content: center;">
             &copy; Copyright 2023, Shubham Chauhan
         </div>
     </nav>
+
+
+
 
     <script src="main.js"></script>
 </body>
