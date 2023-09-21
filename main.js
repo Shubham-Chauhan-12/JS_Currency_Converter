@@ -132,3 +132,9 @@ const countries = [
         "name": "Euro"
     }
 ]
+
+const fromAmountElement = document.querySelector('.amount');
+const convertedAmountElement = document.querySelector('.convertedAmount');
+const fromcurrencyElement = document.querySelector('.fromcurrency');
+const tocurrencyElement = document.querySelector('.tocurrency');
+const ResultElement = document.querySelector('.result');
