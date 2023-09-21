@@ -138,3 +138,24 @@ const convertedAmountElement = document.querySelector('.convertedAmount');
 const fromcurrencyElement = document.querySelector('.fromcurrency');
 const tocurrencyElement = document.querySelector('.tocurrency');
 const ResultElement = document.querySelector('.result');
+
+
+
+countries.forEach(country => {
+    const option1 = document.createElement('option');
+    const option2 = document.createElement('option');
+    option1.value = country.code;
+    option2.value = country.code;
+
+    option1.textContent = (country.code + " " + country.name);
+    option2.textContent = (country.code + " " + country.name);
+
+    fromcurrencyElement.appendChild(option1);
+    tocurrencyElement.appendChild(option2);
+
+
+    fromAmountElement.value = "USD";
+    tocurrencyElement.value = "INR";
+    fromAmountElement.value = 1
+
+})
