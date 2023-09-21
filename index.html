@@ -30,42 +30,24 @@
 
     <!-- main -->
 
-    <main>
-        <div class="container">
-            <div >
-                <input type="number" value="1" min="1" class="amount">
-                <select class="fromcurrency">
-    
-        
-                </select>
-            </div>
-    
-            <div >
-                <input type="number" class="convertedAmount" >
-                <select class="tocurrency">
-    
-        
-                </select>
-            </div>
-    
-            <div class="result">
-                result  =  <h3 id="main"></h3>
-    
-                <button onclick="getExchangeRate()">Check</button>
-    
-                
-            </div>
-            
-    
-        </div>
-    </main>
+    <div class="container">
+        <input type="number" value="1" min="1" class="amount">
+        <select class="fromcurrency"></select>
+
+        <input type="number" class="convertedAmount">
+        <select class="tocurrency"></select>
+
+        result = <h3 id="main"></h3>
+
+        <button onclick="getExchangeRate()">Check</button>
+    </div>
 
     <!-- footer -->
-    <nav class="navbar fixed-bottom bg-body-tertiary" >
+    <nav class="navbar fixed-bottom bg-body-tertiary">
         <div class="container-fluid" style="justify-content: center;">
-          &copy; Copyright 2023, Shubham Chauhan
+            &copy; Copyright 2023, Shubham Chauhan
         </div>
-      </nav>
+    </nav>
 
     <script src="main.js"></script>
 </body>
