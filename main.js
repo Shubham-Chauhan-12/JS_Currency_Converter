@@ -179,7 +179,7 @@ const getExchangeRate = async () => {
 
     const convertedAmount = (amount * conversionRate);
 
-    convertedAmountElement.value = convertedAmount;
+    convertedAmountElement.value =Math.round(convertedAmount) ;
 
 
     document.getElementById("main").innerHTML = "** 1 " + fromcurrency + " = " + tocurrency + " " + conversionRate;
